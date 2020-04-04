@@ -1,4 +1,4 @@
-#FlockingAI - URP
+# FlockingAI - URP
 
 This Unity (Universal Render Pipeline) 2019.3 project embellishes upon
 learnings from the UnityLearn class "AI for Beginners", in particular the 
@@ -13,7 +13,7 @@ code experimentation with VolumeComponent (LensDistortion) to create a 'watery'
 screen view.
 Shadergraph shaders for textures to also create a 'caustic' light simulation.
 
-This project utilizes the Stylized Sand Pillar, a FREE asset in the Unity Asset store.
+This project utilizes the **Stylized Sand Pillar**, a FREE asset in the Unity Asset store.
 https://assetstore.unity.com/packages/3d/props/exterior/stylize-sand-pillar-59604
 
 ![alt text](capture.png)
