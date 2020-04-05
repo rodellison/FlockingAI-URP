@@ -5,11 +5,21 @@ using Random = UnityEngine.Random;
 
 public class Flock : MonoBehaviour
 {
-    public FlockManager myManager;
+    private float RandomApplyFlockRules;
+    private FlockManager myManager;
     private Animator anim;
-    public float speed;
+    private float speed;
     private bool turning = false;
 
+    public void SetFlockManager(FlockManager theManager, float ApplyRulePercentage)
+    {
+        myManager = theManager;
+        RandomApplyFlockRules = ApplyRulePercentage;
+    }
+    /// <summary>
+    /// Set initial parms for Fish speed. Also, set an animation offset (which allows the fish's animation to start
+    /// at slightly different points - so all the fish dont have their fins swaying at the same time)
+    /// </summary>
     private void Start()
     {
         speed = Random.Range(myManager.minSpeed, myManager.maxSpeed);
@@ -17,6 +27,11 @@ public class Flock : MonoBehaviour
         anim.SetFloat("swimOffset", Random.Range(0.0f, 1.0f));
     }
 
+    /// <summary>
+    /// Every frame, determine whether the fish is in bounds, and if NOT, perform some correction.
+    /// If fish are in bounds, test if they are headed for a collision with a scene object and if so, perform some correction.
+    /// Lastly, if in bounds and swimming, then apply Flocking rules
+    /// </summary>
     private void Update()
     {
         //Code that tests if an object is within a bounds
@@ -56,6 +71,8 @@ public class Flock : MonoBehaviour
         }
         else
         {
+            //this section to apply some random speed change logic. If we change speed, then adjust the fish's animation
+            //speed as well
             if (Random.Range(0, 100) < 10)
             {
                 speed = Random.Range(myManager.minSpeed, myManager.maxSpeed);
@@ -65,7 +82,10 @@ public class Flock : MonoBehaviour
                 anim.SetFloat("swimSpeedMult", speedMult);
             }
 
-            if (Random.Range(0, 100) < 20)
+            //finally, apply some randomness as to when to apply flocking rules.. this allows the fish
+            //to sometimes swim a bit longer on their own instead of strictly following rules..
+            //this was added as applying the flocking rules 100% makes the fish appear way to mechanical and exact.
+            if (Random.Range(0, 100) < RandomApplyFlockRules)
                 ApplyRules();
         }
 

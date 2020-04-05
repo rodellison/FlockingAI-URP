@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 2041352762}
-  m_PathPosition: 4.319384
+  m_PathPosition: 1.522997
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0.4
@@ -485,11 +485,12 @@ MonoBehaviour:
   numFish: 100
   allFish: []
   goalPos: {x: 0, y: 0, z: 0}
-  swimLimits: {x: 5, y: 2, z: 5}
+  swimLimits: {x: 5, y: 3, z: 5}
   minSpeed: 0.5
   maxSpeed: 2.5
   neighborDistance: 10
   rotationSpeed: 3
+  applyFlockRulePcnt: 30.3
 --- !u!4 &735947093
 Transform:
   m_ObjectHideFlags: 0
@@ -812,7 +813,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327689542}
-  m_LocalRotation: {x: -0.22723368, y: 0.6307669, z: -0.18865854, w: -0.7175695}
+  m_LocalRotation: {x: -0.08382256, y: 0.92402923, z: -0.26787755, w: -0.25958714}
   m_LocalPosition: {x: 1.266026, y: 11.310492, z: -3.6876354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1037,8 +1038,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959050939}
-  m_LocalRotation: {x: -0.22723368, y: 0.6307669, z: -0.18865854, w: -0.7175695}
-  m_LocalPosition: {x: 6.1004877, y: 3.2149806, z: 2.9744043}
+  m_LocalRotation: {x: -0.08382256, y: 0.92402923, z: -0.26787755, w: -0.25958714}
+  m_LocalPosition: {x: 3.9551063, y: 3.1275935, z: 7.7411256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
