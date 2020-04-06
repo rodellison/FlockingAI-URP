@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47d2d1c0f1d9d6468b5ef91124a98b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxShiftAmount: 0.1
+  maxShiftAmount: 0.15
 --- !u!1 &1414660744
 GameObject:
   m_ObjectHideFlags: 0
