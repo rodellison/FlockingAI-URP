@@ -6,6 +6,8 @@ public class FlockManager : MonoBehaviour
 {
     public GameObject[] fishPrefab;
 
+    public GameObject goalObject;
+
     public int numFish = 20;
 
     public GameObject[] allFish;
@@ -51,6 +53,8 @@ public class FlockManager : MonoBehaviour
         }
 
         goalPos = transform.position;
+        goalObject.transform.position = goalPos;
+        
     }
 
     /// <summary>
@@ -60,9 +64,13 @@ public class FlockManager : MonoBehaviour
     void Update()
     {
         if (Random.Range(0, 100) < 5)
+        {
             goalPos = transform.position + new Vector3(Random.Range(-swimLimits.x, swimLimits.x),
-                          Random.Range(-swimLimits.y, swimLimits.y),
-                          Random.Range(-swimLimits.z, swimLimits.z));
+                                      Random.Range(-swimLimits.y, swimLimits.y),
+                                      Random.Range(-swimLimits.z, swimLimits.z));
+            goalObject.transform.position = goalPos;
+        }
+            
 
         if (Random.Range(0, 100) < 30)
             rotationSpeed = Random.Range(2.0f, 5.0f);
